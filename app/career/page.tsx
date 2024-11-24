@@ -6,12 +6,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import CareerHero from '@/assets/Careers/consigning.jpg';
 import React, { FC, useState, useRef, useEffect } from 'react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 interface Job {
   id: number;
   jobTitle: string;
-  jobDescription: string;
+  jobDescription: string[];
   jobRequirement: string[];
+  tanggungjawab: string[];
+  kelayakan: string[];
   category?: string;
 }
 
@@ -30,6 +33,7 @@ const Career: FC = () => {
   const jobListReft = useRef<HTMLDivElement | null>(null);
   const formRef = useRef<HTMLDivElement | null>(null); // Ref for the Form section
   const detailsRef = useRef<HTMLDivElement | null>(null);
+  const [isBahasa, setIsBahasa] = useState(false);
 
   // Handles showing job details
   const handleReadDetailsClick = async (job: any, category: string) => {
@@ -60,6 +64,10 @@ const Career: FC = () => {
       detailsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+
+  const toggleLanguage = () => {
+    setIsBahasa(false);
+  }
 
   // Handles the 'Apply' button click
 const handleApplyClick = async (job: Job, category: string, fromLeftColumn: boolean = false) => {
@@ -226,24 +234,82 @@ const handleApplyClick = async (job: Job, category: string, fromLeftColumn: bool
               layout
               layoutId={rightOpen ? "open" : "closed"} // Optional for layout transitions
             >
-              <h1 className="text-3xl font-semibold text-gray-900">{selectedJob.category}</h1>
-              <h2 className="text-3xl font-semibold text-gray-900">{selectedJob.jobTitle}</h2>
-              <p className="mt-4 text-gray-700"><strong>Description:</strong> {selectedJob.jobDescription}</p>
-              <p className="mt-2 text-gray-700"><strong>Requirements:</strong></p>
-              <ul className="list-disc pl-6 mt-2 text-gray-700">
-                {selectedJob.jobRequirement.map((req: string, index: number) => (
-                  <li key={index}>{req}</li>
-                ))}
-              </ul>
-              {!isApplied(selectedJob) && (
-                <button
-                  className="mt-4 text-white bg-green-500 hover:bg-green-600 rounded-lg px-4 py-2 transition duration-300"
-                  onClick={() => handleApplyClick(selectedJob, selectedJob.category)} // Apply from right column
-                  disabled={isAnimating}
-                >
-                  Apply
-                </button>
-              )}
+              <h1 className="inline-block text-xl md:text-2xl font-medium text-gray-600 bg-gray-200 mb-2 p-2 rounded-lg">{selectedJob.category}</h1>
+              <h2 className="text-2xl md:text-3xl font-semibold text-blue-600">{selectedJob.jobTitle}</h2>
+
+              <Tabs defaultValue="English" className="w-full mt-4">
+                <TabsList>
+                  <TabsTrigger value="English">English</TabsTrigger>
+                  <TabsTrigger value="Bahasa Malaysia">Bahasa Malaysia</TabsTrigger>
+                </TabsList>
+                <TabsContent value="English">
+                  <div className='md:pr-6'>
+                    {/* Description */}
+                    <p className="mt-6 text-gray-700 text-base sm:text-lg">
+                      <strong>Description:</strong>
+                    </p>
+                    <ul className="list-disc pl-6 mt-2 text-gray-700 text-base sm:text-lg">
+                      {selectedJob.jobDescription.map((req: string, index: number) => (
+                        <li key={index}>{req}</li>
+                      ))}
+                    </ul>
+
+                    {/* Requirements */}
+                    <p className="mt-4 text-gray-700 text-base sm:text-lg">
+                      <strong>Requirements:</strong>
+                    </p>
+                    <ul className="list-disc pl-6 mt-2 text-gray-700 text-base sm:text-lg">
+                      {selectedJob.jobRequirement.map((req: string, index: number) => (
+                        <li key={index}>{req}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {!isApplied(selectedJob) && (
+                    <button
+                      className="mt-4 text-white bg-green-500 hover:bg-green-600 rounded-lg px-4 py-2 transition duration-300"
+                      onClick={() => handleApplyClick(selectedJob, selectedJob.category)} // Apply from right column
+                      disabled={isAnimating}
+                    >
+                      Apply
+                    </button>
+                  )}
+                </TabsContent>
+                <TabsContent value="Bahasa Malaysia">
+                  <div className='md:pr-6'>
+                    {/* Tanggungjawab */}
+                    <p className="mt-6 text-gray-700 text-base sm:text-lg">
+                      <strong>Tanggungjawab:</strong>
+                    </p>
+                    <ul className="list-disc pl-6 mt-2 text-gray-700 text-base sm:text-lg">
+                      {selectedJob.tanggungjawab.map((req: string, index: number) => (
+                        <li key={index}>{req}</li>
+                      ))}
+                    </ul>
+
+                    {/* Kelayakan */}
+                    <p className="mt-4 text-gray-700 text-base sm:text-lg">
+                      <strong>Kelayakan:</strong>
+                    </p>
+                    <ul className="list-disc pl-6 mt-2 text-gray-700 text-base sm:text-lg">
+                      {selectedJob.kelayakan.map((req: string, index: number) => (
+                        <li key={index}>{req}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {!isApplied(selectedJob) && (
+                    <button
+                      className="mt-4 text-white bg-green-500 hover:bg-green-600 rounded-lg px-4 py-2 transition duration-300"
+                      onClick={() => handleApplyClick(selectedJob, selectedJob.category)} // Apply from right column
+                      disabled={isAnimating}
+                    >
+                      Mohon
+                    </button>
+                  )}
+                </TabsContent>
+              </Tabs>
+
             </motion.div>
           )}
         </AnimatePresence>

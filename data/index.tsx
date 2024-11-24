@@ -301,14 +301,29 @@ export const navItems = [
           id: 3,
           jobTitle: "Lorry Driver / Pemandu Lori (LH)",
           jobDescription: [
-            "Drive Lorry",
+            "Drive the lorry from Shopee Express warehouse to another Shopee Express warehouse",
+            "Lorry size ranges from 3 tons to 10 tons",
+            "3-5 tons: one assistant provided",
+            "10 tons: two assistants provided",
+            "Salary range from RM2400 to RM5000"
           ],
-          tanggungjawab: [],
+          tanggungjawab: [
+            "Memandu lori dari gudang Shopee Express ke gudang Shopee Express yang lain",
+            "Saiz lori dari 3 Tan sehingga 10 Tan",
+            "3-5 Tan: seorang kelindan",
+            "10 Tan: dua orang kelindan",
+            "Gaji bermula dari RM2400 sehingga RM5000"
+          ],
           jobRequirement: [
-            "D-License holder",
-            "Knowledge of road safety regulations",
+            "GDL-D and GDL-E License holder",
+            "18 - 45 years old",
+            "Experienced with driving/handling lorry",
           ],
-          kelayakan: [],
+          kelayakan: [
+            "Pemegang lesen GDL-D dan E",
+            "18 - 45 Tahun",
+            "Mempunyai pengalaman membawa/mengurus lori ",
+          ],
         },
       ],
     },
