@@ -238,22 +238,58 @@ export const navItems = [
       item: [
         {
           id: 1,
-          jobTitle: "Lorry Driver / Pemandu Lori",
-          jobDescription: "Drive Lorry",
+          jobTitle: "Lorry Driver / Pemandu Lori (FM)",
+          jobDescription: [
+            "Drive the lorry from the merchant to the Shopee Express warehouse",
+            "Lorry size ranges from 3 tons to 10 tons",
+            "3-5 tons: one assistant provided",
+            "10 tons: two assistants provided",
+            "Salary range from RM2400 to RM5000"
+          ],
+          tanggungjawab: [
+            "Memandu lori dari peniaga ke gudang Shopee Express",
+            "Saiz lori dari 3 Tan sehingga 10 Tan",
+            "3-5 Tan: seorang kelindan",
+            "10 Tan: dua orang kelindan",
+            "Gaji bermula dari RM2400 sehingga RM5000"
+          ],
           jobRequirement: [
-            "D-License and E-License holder / Pemegang lesen GDL D dan E",
-            "18 - 45 years old / 18 - 45 Tahun",
-            "Experienced with driving lorry / Mempunyai pengalaman membawa lori ",
+            "GDL-D and GDL-E License holder",
+            "18 - 45 years old",
+            "Experienced with driving/handling lorry",
+          ],
+          kelayakan: [
+            "Pemegang lesen GDL-D dan E",
+            "18 - 45 Tahun",
+            "Mempunyai pengalaman membawa/mengurus lori ",
           ],
         },
         {
           id: 2,
-          jobTitle: "First Mile Sorter / Pengasing Barang",
-          jobDescription: "Parcel sorting",
+          jobTitle: "First Mile Sorter / Pengasing Barang (FM)",
+          jobDescription: [
+            "Salary ranges from RM1500 to RM3000",
+            "Divided into 3: Kelindan, Implant Sorter, and Hub Sorter",
+            "1. Kelindan: Assists the lorry driver",
+            "2. Implant Sorter: Located at selected merchant sites to help speed up the process of scanning items",
+            "3. Hub Sorter: Located at the FM Hub Shopee Express to help pack and load items into lorry for delivery to the warehouse",
+          ],
+          tanggungjawab: [
+            "Gaji bermula dari RM1500 sehingga RM3000",
+            "Terbahagi kepada 3: Kelindan, Implant Sorter dan Hub Sorter",
+            "1. Kelindan: Menjadi pembantu pemandu lori",
+            "2. Implant Sorter: Berada di tempat peniaga terpilih dan membantu mempercepat proses scanning barang",
+            "3. Hub Sorter: Berada di FM Hub Shopee Express untuk membantu membungkus dan menyusun ke dalam lori untuk dihantar ke gudang"
+          ],
           jobRequirement: [
-            "18 - 30 years old / 18 - 30 Tahun",
-            "Physically fit to handle parcels / Berkemampuan untuk mengendali barangan",
-            "Ability to go to work location  / Berkemampuan untuk bergerak ke lokasi kerja",
+            "18 - 30 years old",
+            "Physically fit to handle parcels",
+            "Ability to go to work location",
+          ],
+          kelayakan: [
+            "Berumur 18 - 30 Tahun",
+            "Berkemampuan untuk mengendali barangan",
+            "Berkemampuan untuk bergerak ke lokasi kerja",
           ],
         },
       ],
@@ -263,12 +299,16 @@ export const navItems = [
       item: [
         {
           id: 3,
-          jobTitle: "Lorry Driver / Pemandu Lori",
-          jobDescription: "Drive Lorry",
+          jobTitle: "Lorry Driver / Pemandu Lori (LH)",
+          jobDescription: [
+            "Drive Lorry",
+          ],
+          tanggungjawab: [],
           jobRequirement: [
             "D-License holder",
             "Knowledge of road safety regulations",
           ],
+          kelayakan: [],
         },
       ],
     },
@@ -277,31 +317,43 @@ export const navItems = [
       item: [
         {
           id: 4,
-          jobTitle: "Full-Time Delivery / Penghantar Sepenuh Masa",
-          jobDescription: "Drive Lorry",
+          jobTitle: "Full-Time Delivery / Penghantar Sepenuh Masa (LM)",
+          jobDescription: [
+            "Drive Lorry",
+          ],
+          tanggungjawab: [],
           jobRequirement: [
             "D-License holder",
             "Ability to follow delivery schedules",
           ],
+          kelayakan: [],
         },
         {
           id: 5,
           jobTitle: "Part-Time Delivery / Penghantar Separuh Masa",
-          jobDescription: "Drive Lorry",
+          jobDescription: [
+            "Drive Lorry",
+          ],
+          tanggungjawab: [],
           jobRequirement: [
             "D-License holder",
             "Flexible working hours availability",
           ],
+          kelayakan: [],
         },
         {
           id: 6,
-          jobTitle: "Sorter / Pengasing Barang",
-          jobDescription: "Parcel sorting",
+          jobTitle: "Sorter / Pengasing Barang (LM)",
+          jobDescription: [
+            "Parcel Sorting",
+          ],
+          tanggungjawab: [],
           jobRequirement: [
             ">18 years old",
             "Attention to detail",
             "Ability to work in a fast-paced environment",
           ],
+          kelayakan: [],
         },
       ],
     },
@@ -311,20 +363,28 @@ export const navItems = [
         {
           id: 7,
           jobTitle: "Bus Driver / Pemandu Bas",
-          jobDescription: "Drive Lorry",
+          jobDescription: [
+            "Drive Lorry",
+          ],
+          tanggungjawab: [],
           jobRequirement: [
             "D-License holder",
             "Excellent customer service skills",
           ],
+          kelayakan: [],
         },
         {
           id: 8,
           jobTitle: "Mechanic / Mekanik",
-          jobDescription: "Repair vehicle",
+          jobDescription: [
+            "Repair vehicle",
+          ],
+          tanggungjawab: [],
           jobRequirement: [
             "Vehicle repairing and maintenance knowledge",
             "Ability to diagnose and fix issues quickly",
           ],
+          kelayakan: [],
         },
       ],
     },
